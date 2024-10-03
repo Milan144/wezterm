@@ -36,7 +36,7 @@ local keys = function()
     keybind({ mod.l, mod.s }, "J", act.AdjustPaneSize { "Down", 5 }),
     keybind({ mod.l, mod.s }, "K", act.AdjustPaneSize { "Up", 5 }),
     keybind({ mod.l, mod.s }, "L", act.AdjustPaneSize { "Right", 5 }),
-    keybind({ mod.l, mod.s }, "&", act.CloseCurrentTab { confirm = true }),
+    keybind({ mod.l, mod.s }, "q", act.CloseCurrentTab { confirm = true }),
     keybind(
       { mod.l },
       "e",
@@ -85,10 +85,8 @@ local keys = function()
   }
 
   -- tab navigation
-  for i = 1, 9 do
-    table.insert(keys, keybind({ mod.l }, tostring(i), act.ActivateTab(i - 1)))
-  end
-  return keys
+  keybind({ mod.l }, ")", act.ActivateTabRelative(1)) -- Touche ")" 
+  keybind({ mod.l }, "(", act.ActivateTabRelative(-1)) -- Touche "("
 end
 
 M.apply_to_config = function(c)
