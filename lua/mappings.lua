@@ -15,7 +15,7 @@ end
 
 local M = {}
 
-local leader = { mods = mod.c, key = "a", timeout_miliseconds = 1000 }
+local leader = { mods = mod.c, key = "q", timeout_milliseconds = 1000 }
 
 local keys = function()
   local keys = {
@@ -62,17 +62,6 @@ local keys = function()
     keybind({ mod.c, mod.s }, "c", act.CopyTo "Clipboard"),
     keybind({ mod.c, mod.s }, "v", act.PasteFrom "Clipboard"),
 
-    -- launch spotify_player as a small pane in the bottom
-    keybind(
-      { mod.l },
-      "s",
-      act.SplitPane {
-        direction = "Down",
-        command = { args = { "spotify_player" } },
-        size = { Cells = 6 },
-      }
-    ),
-
     -- update all plugins
     keybind(
       { mod.l },
@@ -85,8 +74,8 @@ local keys = function()
   }
 
   -- tab navigation
-  keybind({ mod.l }, ")", act.ActivateTabRelative(1)) -- Touche ")" 
-  keybind({ mod.l }, "(", act.ActivateTabRelative(-1)) -- Touche "("
+  keybind({ mod.l }, ")", act.ActivateTabRelative(1)) -- SHIFT + touche "°"
+  keybind({ mod.l }, "(", act.ActivateTabRelative(-1)) -- SHIFT + touche "5"
 end
 
 M.apply_to_config = function(c)
