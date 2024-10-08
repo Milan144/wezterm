@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 local M = {}
 
 M.setup_keys = function(c)
-  c.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
+  c.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
 
   c.keys = {
     -- Raccourcis avec la combinaison leader
