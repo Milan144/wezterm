@@ -1,9 +1,7 @@
 local wez = require "wezterm"
 local utils = require "lua.utils"
 local mappings = require "lua.mappings"
-
 local appearance = require "lua.appearance"
-local bar = wez.plugin.require "https://github.com/adriankarlen/bar.wezterm"
 
 local c = {}
 
@@ -25,8 +23,5 @@ appearance.apply_to_config(c)
 
 -- keys
 mappings.setup_keys(c)
-
--- bar
-bar.apply_to_config(c, { enabled_modules = { hostname = false } })
 
 return c
